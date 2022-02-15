@@ -104,3 +104,9 @@ resource "azurerm_virtual_machine_extension" "azuread-extension" {
   type_handler_version       = "1.0"
   auto_upgrade_minor_version = true
 }
+
+resource "azurerm_role_assignment" "role-vm-admin" {
+  scope                = azurerm_linux_virtual_machine.linux-vm.id
+  role_definition_name = "Virtual Machine Administrator Login"
+  principal_id         = var.principal_id
+}

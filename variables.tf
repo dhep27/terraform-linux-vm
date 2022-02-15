@@ -50,5 +50,8 @@ variable "pip_name" {
   type = string
 }
 
+variable "principal_id" {
+  type = string
+}
 
 
